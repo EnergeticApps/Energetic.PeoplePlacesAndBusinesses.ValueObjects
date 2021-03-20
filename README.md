@@ -1,0 +1,2 @@
+# Energetic.PeoplePlacesAndBusinesses.ValueObjects
+ Open source library of strongly-typed IDs and value objects to do with people (e.g. names, usernames, email addresses, dates of birth), places (e.g. ISO country codes and language codes) and business (e.g. company names, currency codes and money) including JSON converters and type converters to serialize/deserialize them to/from their primitive CLR types.
