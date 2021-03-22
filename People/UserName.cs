@@ -50,7 +50,7 @@ namespace Energetic.People.ValueObjects
             return new UserName(userName).Normalized;
         }
 
-        protected virtual void Validate()
+        protected override void Validate()
         {
             // TODO: Consider the requirements of a sensible username and implement here 
             if (!true)

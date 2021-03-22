@@ -16,17 +16,10 @@ namespace Energetic.People.ValueObjects
     [TypeConverter(typeof(WrappedStringTypeConverter<EmailAddress>))]
     public record EmailAddress : WrappedStringValueObject<EmailAddress>
     {
-        private EmailAddress() : base(string.Empty)
-        {
-            IsUnknown = true;
-        }
-
         public EmailAddress(string email) : base(email)
         {
             Validate();
         }
-
-        public static EmailAddress Unknown => new EmailAddress();
 
         public string Normalized
         {
@@ -46,12 +39,7 @@ namespace Energetic.People.ValueObjects
             return new EmailAddress(email).Normalized;
         }
 
-        public bool IsUnknown
-        {
-            get;
-        }
-
-        protected virtual void Validate()
+        protected override void Validate()
         {
             if(string.IsNullOrWhiteSpace(Value))
                 throw new StringArgumentNullOrWhiteSpaceException(nameof(Value));

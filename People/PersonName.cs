@@ -14,11 +14,6 @@ namespace Energetic.People.ValueObjects
     //[TypeConverter(typeof(PersonNameTypeConverter))]
     public record PersonName : ValueObject<PersonName, (PersonTitle?, string?, IEnumerable<string>?, string?, IEnumerable<string>?, string?, string?)>
     {
-        private PersonName() : base((PersonTitle.None, string.Empty, null, null, null, null, null)) 
-        {
-            IsUnknown = true;
-        }
-
         public PersonName(string givenName) : this(PersonTitle.None, givenName)
         {
             if (string.IsNullOrWhiteSpace(givenName))
@@ -58,8 +53,6 @@ namespace Energetic.People.ValueObjects
             PreferredName = preferredName ?? MakePreferredName(title, givenName, middleNames, familyName);
         }
 
-        public static PersonName Unknown => new PersonName(string.Empty);
-
         public PersonTitle Title { get; }
         public string? GivenName { get; }
         public IEnumerable<string>? MiddleNames { get; }
@@ -68,19 +61,6 @@ namespace Energetic.People.ValueObjects
         public IEnumerable<string>? NickNames { get; }
         public string PreferredName { get; }
         public bool HasTitle => !Title.HasNone();
-
-        public bool IsKnown
-        {
-            get
-            {
-                return !IsUnknown;
-            }
-        }
-
-        public bool IsUnknown
-        {
-            get; init;
-        }
 
 
         private static string MakePreferredName(
