@@ -57,9 +57,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Energetic.Text\Energetic.Text.csproj" />
-		<ProjectReference Include="..\Energetic.ValueObjects\Energetic.ValueObjects.csproj" />
-		<ProjectReference Include="..\Energetic\Energetic.csproj" />
+	  <PackageReference Include="Energetic" Version="0.0.3-alpha" />
+	  <PackageReference Include="Energetic.Text" Version="0.0.1-alpha" />
+	  <PackageReference Include="Energetic.ValueObjects" Version="0.0.1-alpha" />
 	</ItemGroup>
 
 </Project>
