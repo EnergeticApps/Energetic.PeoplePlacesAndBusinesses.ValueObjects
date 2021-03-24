@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using Energetic.ValueObjects;
+﻿using Energetic.ValueObjects;
 using Energetic.ValueObjects.JsonConverters;
-using System.ComponentModel.DataAnnotations;
 using Energetic.ValueObjects.TypeConverters;
+using System;
+using System.ComponentModel;
+using System.Text.Json.Serialization;
 
 namespace Energetic.People.ValueObjects
 {
@@ -15,21 +11,9 @@ namespace Energetic.People.ValueObjects
     [TypeConverter(typeof(WrappedStringTypeConverter<UserName>))]
     public record UserName : WrappedStringValueObject<UserName>
     {
-        private UserName() : base(string.Empty)
-        {
-            IsUnknown = true;
-        }
-
         public UserName(string userName) : base(userName)
         {
             Validate();
-        }
-
-        public static UserName Unknown => new UserName();
-
-        public bool IsUnknown
-        {
-            get;
         }
 
         public string Normalized
@@ -52,7 +36,7 @@ namespace Energetic.People.ValueObjects
 
         protected override void Validate()
         {
-            // TODO: Consider the requirements of a sensible username and implement here 
+            // TODO: Consider the requirements of a sensible username and implement here
             if (!true)
                 throw new ArgumentException($"{Value} is not a valid user name.");
         }

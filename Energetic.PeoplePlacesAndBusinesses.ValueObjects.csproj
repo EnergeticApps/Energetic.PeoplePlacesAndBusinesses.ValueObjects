@@ -21,17 +21,16 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Include="..\icon.png">
-			<Pack>True</Pack>
-			<PackagePath></PackagePath>
-		</None>
+		<None Include="icon.png" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="README.md" Pack="True" PackagePath="\" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<Compile Remove="People\JsonConverters\**" />
 		<Compile Remove="People\TypeConverters\**" />
-		<Compile Remove="People\ValueObjects\JsonConverters\**" />
-		<Compile Remove="People\ValueObjects\TypeConverters\**" />
 		<EmbeddedResource Remove="People\JsonConverters\**" />
 		<EmbeddedResource Remove="People\TypeConverters\**" />
 		<EmbeddedResource Remove="People\ValueObjects\JsonConverters\**" />
@@ -43,7 +42,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Compile Remove="Country3CharIsoCode.cs" />
 		<Compile Remove="Globalization\Country3CharIsoCode.cs" />
 		<Compile Remove="Globalization\CountryNumericIsoCode.cs" />
 		<Compile Remove="Globalization\Language3CharBibliographicIsoCode.cs" />
