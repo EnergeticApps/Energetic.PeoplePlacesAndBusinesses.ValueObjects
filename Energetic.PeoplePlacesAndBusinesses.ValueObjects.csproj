@@ -8,7 +8,7 @@
 		<Authors>Benjamin Charlton</Authors>
 		<Company>Energetic Apps</Company>
 		<Product>Energetic Libraries</Product>
-		<Version>0.0.1-alpha</Version>
+		<Version>0.0.3-alpha</Version>
 		<Description>Strongly-typed IDs and value objects to do with people, places and business, including JSON converters and type converters to serialize/deserialize them to/from their primitive CLR types.</Description>
 		<Copyright>2021 Energetic Apps</Copyright>
 		<PackageProjectUrl>https://github.com/orgs/EnergeticApps/projects/1</PackageProjectUrl>
@@ -46,6 +46,7 @@
 		<Compile Remove="Globalization\CountryNumericIsoCode.cs" />
 		<Compile Remove="Globalization\Language3CharBibliographicIsoCode.cs" />
 		<Compile Remove="Globalization\Language3CharTerminologyIsoCode.cs" />
+		<Compile Remove="Globalization\LocalizableStringBase.cs" />
 		<Compile Remove="Globalization\ValueObjects\Country3CharIsoCode.cs" />
 		<Compile Remove="Globalization\ValueObjects\CountryNumericIsoCode.cs" />
 		<Compile Remove="Globalization\ValueObjects\Language3CharBibliographicIsoCode.cs" />
@@ -55,9 +56,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="Energetic" Version="0.0.3-alpha" />
-	  <PackageReference Include="Energetic.Text" Version="0.0.1-alpha" />
-	  <PackageReference Include="Energetic.ValueObjects" Version="0.0.1-alpha" />
+	  <ProjectReference Include="..\Energetic.Text\Energetic.Text.csproj" />
+	  <ProjectReference Include="..\Energetic.ValueObjects\Energetic.ValueObjects.csproj" />
+	  <ProjectReference Include="..\Energetic\Energetic.csproj" />
 	</ItemGroup>
 
 </Project>
