@@ -10,7 +10,7 @@ namespace Energetic.Globalization.ValueObjects
 {
     public abstract record LocalizableStringBase : ValueObject<LocalizableStringBase, (string, CultureInfoName)>
     {
-        public LocalizableStringBase(string content, CultureInfoName locale) : base((content, locale)) { }
+        public LocalizableStringBase(string content, CultureInfoName culture) : base((content, culture)) { }
 
         public LocalizableStringBase(string content, Language2CharIsoCode language) : base((content, new CultureInfoName(language))) { }
     }
